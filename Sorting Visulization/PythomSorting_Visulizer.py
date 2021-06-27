@@ -5,15 +5,9 @@ pygame.font.init()
 # Total window
 screen = pygame.display.set_mode((900, 650))
 
-# Title and Icon
+# Title on the window
 pygame.display.set_caption("SORTING VISUALISER")
-# Place any custom png file in same folder as the source code
-# and mention it below and uncomment below two lines.
-# img = pygame.image.load
-# ('E:/Projects / Sorting Visualiser / sorticon.png')
-# pygame.display.set_icon(img)
 
-# Boolean variable to run the program in while loop
 run = True
 
 # Window size
@@ -26,7 +20,8 @@ clr =[(0, 204, 102), (255, 0, 0),
 (0, 0, 153), (255, 102, 0)]
 fnt = pygame.font.SysFont("comicsans", 30)
 fnt1 = pygame.font.SysFont("comicsans", 20)
-# Generate new Array
+
+# Generate new Array for sorting using random
 def generate_arr():
 	for i in range(1, 151):
 		arr_clr[i]= clr[0]
@@ -38,7 +33,7 @@ def refill():
 	pygame.display.update()
 	pygame.time.delay(20)
 
-# Sorting Algo:Merge sort
+# Sorting Algo for Merge sort start here 
 def mergesort(array, l, r):
 	mid =(l + r)//2
 	if l<r:
@@ -87,6 +82,8 @@ def merge(array, x1, y1, x2, y2):
 		else:
 			arr_clr[i]= clr[0]
 
+			
+			
 # Draw the array values
 def draw():
 	# Text should be rendered
@@ -117,8 +114,9 @@ def draw():
 			(boundry_arr * i-3, 100),\
 			(boundry_arr * i-3, array[i]*boundry_grp + 100),\
 			element_width)
+# Sorting Algo for Merge sort End here 
 
-# Infinite loop to keep the window open
+# Infinite loop to keep the window open and display the changes in array
 while run:
 	# background
 	screen.fill((255, 255, 255))
